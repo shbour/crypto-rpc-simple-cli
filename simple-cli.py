@@ -1,9 +1,10 @@
 from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
 from pprint import pprint
 
-conn = AuthServiceProxy("http://rpc_user:rpc_password@127.0.0.1:rpc_port")
+conn = AuthServiceProxy("http://user:H9HKSXSWMxavOQc@127.0.0.1:28191")
 
 def simpleCli():
+    account = ""
     userinput = input("What do you want to do? ")
 
     if userinput == "add node" or userinput == "addnode" or userinput == "addnode add":
@@ -84,8 +85,8 @@ def simpleCli():
             simpleCli()
 
     elif userinput == "name of address" or userinput == "account name" or  userinput =="get account" or userinput == "getaccount" or userinput == "address name":
-        account = input("Enter the desired account address to learn its account name: ")
-        print(conn.getaccount(account))
+        addr = input("Enter the desired account address to learn its account name: ")
+        print(conn.getaccount(addr))
         simpleCli()
 
     elif userinput == "get account address" or userinput == "account address" or userinput == "account addr" or userinput == "acc addr":
@@ -104,6 +105,17 @@ def simpleCli():
         
     elif userinput == "bal" or userinput == "balance":
         print(conn.getbalance())
+        simpleCli()
+
+    elif userinput == ("bal by account") or userinput == ("account balance") or userinput == ("account bal") or userinput == ("acc bal"):
+        account = input("Which account would you wish to see the balance from?: ")
+        print(conn.getbalance(account))
+        simpleCli()
+
+    elif userinput == ("bal by address") or userinput == ("address balance") or userinput == ("addr bal"):
+        addr = input("From which address would you wish to see the balance from?: ")
+        account = conn.getaccount(addr)
+        print(conn.getbalance(account))
         simpleCli()
 
     elif userinput == "getbestblockhash" or userinput == "get best block hash" or userinput == "best block hash":
