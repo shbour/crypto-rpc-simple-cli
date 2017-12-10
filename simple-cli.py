@@ -319,6 +319,7 @@ def simpleCli():
         password = input("Enter wallet encryption password: ")
         timeout = int(input("Enter how long in second you want to keep the wallet unlocked?: "))
         conn.walletpassphrase(password, timeout)
+        print("You have unlocked the wallet for " + (timeout * 60 * 60 * 24) + " days!")
         simpleCli()
 
     elif userinput == "":
