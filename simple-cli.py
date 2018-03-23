@@ -1,7 +1,7 @@
 from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
 from pprint import pprint
 
-conn = AuthServiceProxy("http://user:H9HKSXSWMxavOQc@127.0.0.1:28191")
+conn = AuthServiceProxy("http://xpusername123:XBZXYo9K1su4Rab@127.0.0.1:28191")
 
 def simpleCli():
     account = ""
@@ -251,7 +251,7 @@ def simpleCli():
     elif userinput == "listtransactions" or userinput == "list tx from account":
         account = input("Enter the account you want to see the transaction from: ")
         amount = int(input("How many transactions would you want to see?: "))
-        pprint(conn.listtransaction('[' + account + ']', '[ count=' + amount + ' ]'))
+        pprint(conn.listtransactions(account, amount))
         simpleCli()
 
     elif userinput == "sendfrom" or userinput == "send from" or userinput == "send with":
