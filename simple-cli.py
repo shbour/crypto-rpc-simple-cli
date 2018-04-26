@@ -6,59 +6,59 @@ conn = AuthServiceProxy("http://USER:PASS@IP_ADDR:PORT")
 def simpleCli():
     account = ""
     userinput = input("What do you want to do? ")
-    
+
     if userinput == "help" or userinput == "h":
-        print("add node: Allows you to add nodes by their IP" + \n
-        "remove node: Allows you to remove nodes by their IP" + \n
-        "try node: Allows you to try to connect to a node one time" + \n
-        "backup: Requests a directory path to store the wallet backup" + \n
-        "multisig: Allows you to create a multisig address with two (2) keys" + \n
-        "create raw tx: Allows you to create a raw transaction (Information is asked one at a time)" + \n
-        "decode tx: Decrypt the tx with the 'hex string' of the transaction" + \n
-        "show private key: Will ask for the address you want to get the private key for" + \n
-        "name of address: Will get you the account name of the address given" + \n
-        "show all keys: Requests a directory to send a file with all the private keys in the wallet" + \n
-        "get account address: Will give you the address of the account name given" + \n
-        "encrypt: Requests a password to encrypt the wallet (Highly recommended)" + \n
-        "get node info: Will give you the information on your nodes" + \n
-        "bal: Will show total wallet balance" + \n
-        "acc bal: (or account balance) will show your balance by account name (shbour 40XP jhon 5XP)" + \n
-        "get addr by acc: (or get addresses by account) will show you the addresses related to that account name" + \n
-        "bal by addr: (or balance by address) Will show the balance to the specified address" + \n
-        "best block hash: Will show the best block hash" + \n
-        "block: (or get block) Requests a block hash to display block info" + \n
-        "block count: (or get block count) Displays the longuest chain" + \n
-        "hash: Requests block index (index 0 is genesis block) to display block hash" + \n
-        "connections: Shows the amount of peers you are connected to" + \n
-        "difficulty: Displays the difficulty levels" + \n
-        "info: Displays your wallet info" + \n
-        "mining info: Displays your mining information" + \n
-        "new addr: (or new address) Will generate a new address for the account given" + \n
-        "peers: Displays the info of your peers" + \n
-        "raw pool: (or getrawpool) will show you the raw value of the memory pool (transaction pool/queue)" + \n
-        "raw tx: (or get raw transaction) displays the raw transaction value of a TXID" + \n
-        "received by account: Display the amount of coins that wagered into the address(es) to the specified account name" + \n
-        "received by address: Display the amount of coins that wagered into the address" + \n
-        "unspent coins: Will show your the coins that has not been spent in your wallet" + \n
-        "add priv key: (or import priv key) Allows you to import an address from another wallet or a paper wallet to the current wallet by entering the private key of the wanted address" + \n
-        "dismiss block: (or void block) Requests the hash of the block that is being voided" + \n
-        "key refill: refills the keys in your key pool" + \n
-        "show accounts: Will display a list of account" + \n
-        "cc: (or coincontrol) will display the accounts by groups of addresses" + \n
-        "received addresses: Will display a list of addresses your received funds with" + \n
-        "send from: (or send with) Requests a source account name or address, a destination address and the amount to be sent" + \n
-        "send raw tx: Requests the hexstring of the transaction" + \n
-        "withdraw: (or sendtoaddress) Allows you to send coins from your total balance to another address" + \n
-        "setaccount: Requests for a account name and address" + \n
-        "sign message: (or signmessage) Requests an address to sign the message with, and the message itself to be signed" + \n
-        "stop: (or kill) will terminate the daemon (back-end) of the wallet and will require a manual closure of the GUI (Graphical User Interface)" + \n
-        "create block: (or submit block) Requests the hexdata of the block to be created" + \n
-        "valid addr: (or valid address) Requests an address to verify its authenticity with the current blockchain" + \n
-        "verify message: (or verifymessage) Allows you to verify a message to see if its true or false (form of authentication") + \n
-        "lock: (or walletlock) will lock your wallet if it was unlocked (Needs to have a password to be locked)" + \n
-        "unlock: (or walletpassphrase) requests a password and a time in days to have the wallet unlocked (100% unlock, not secure") + \n
-        "change password: (or walletpassphrasechange) Requests the old password before asking for the new password)"
-             
+        print("add node: Allows you to add nodes by their IP" + "\n" +
+        "remove node: Allows you to remove nodes by their IP" + "\n" +
+        "try node: Allows you to try to connect to a node one time" + "\n" +
+        "backup: Requests a directory path to store the wallet backup" + "\n" +
+        "multisig: Allows you to create a multisig address with two (2) keys" + "\n" +
+        "create raw tx: Allows you to create a raw transaction (Information is asked one at a time)" + "\n" +
+        "decode tx: Decrypt the tx with the 'hex string' of the transaction" + "\n" +
+        "show private key: Will ask for the address you want to get the private key for" + "\n" +
+        "name of address: Will get you the account name of the address given" + "\n" +
+        "show all keys: Requests a directory to send a file with all the private keys in the wallet" + "\n" +
+        "get account address: Will give you the address of the account name given" + "\n" +
+        "encrypt: Requests a password to encrypt the wallet (Highly recommended)" + "\n" +
+        "get node info: Will give you the information on your nodes" + "\n" +
+        "bal: Will show total wallet balance" + "\n" +
+        "acc bal: (or account balance) will show your balance by account name (shbour 40XP jhon 5XP)" + "\n" +
+        "get addr by acc: (or get addresses by account) will show you the addresses related to that account name" + "\n" +
+        "bal by addr: (or balance by address) Will show the balance to the specified address" + "\n" +
+        "best block hash: Will show the best block hash" + "\n" +
+        "block: (or get block) Requests a block hash to display block info" + "\n" +
+        "block count: (or get block count) Displays the longuest chain" + "\n" +
+        "hash: Requests block index (index 0 is genesis block) to display block hash" + "\n" +
+        "connections: Shows the amount of peers you are connected to" + "\n" +
+        "difficulty: Displays the difficulty levels" + "\n" +
+        "info: Displays your wallet info" + "\n" +
+        "mining info: Displays your mining information" + "\n" +
+        "new addr: (or new address) Will generate a new address for the account given" + "\n" +
+        "peers: Displays the info of your peers" + "\n" +
+        "raw pool: (or getrawpool) will show you the raw value of the memory pool (transaction pool/queue)" + "\n" +
+        "raw tx: (or get raw transaction) displays the raw transaction value of a TXID" + "\n" +
+        "received by account: Display the amount of coins that wagered into the address(es) to the specified account name" + "\n" +
+        "received by address: Display the amount of coins that wagered into the address" + "\n" +
+        "unspent coins: Will show your the coins that has not been spent in your wallet" + "\n" +
+        "add priv key: (or import priv key) Allows you to import an address from another wallet or a paper wallet to the current wallet by entering the private key of the wanted address" + "\n" +
+        "dismiss block: (or void block) Requests the hash of the block that is being voided" + "\n" +
+        "key refill: refills the keys in your key pool" + "\n" +
+        "show accounts: Will display a list of account" + "\n" +
+        "cc: (or coincontrol) will display the accounts by groups of addresses" + "\n" +
+        "received addresses: Will display a list of addresses your received funds with" + "\n" +
+        "send from: (or send with) Requests a source account name or address, a destination address and the amount to be sent" + "\n" +
+        "send raw tx: Requests the hexstring of the transaction" + "\n" +
+        "withdraw: (or sendtoaddress) Allows you to send coins from your total balance to another address" + "\n" +
+        "setaccount: Requests for a account name and address" + "\n" +
+        "sign message: (or signmessage) Requests an address to sign the message with, and the message itself to be signed" + "\n" +
+        "stop: (or kill) will terminate the daemon (back-end) of the wallet and will require a manual closure of the GUI (Graphical User Interface)" + "\n" +
+        "create block: (or submit block) Requests the hexdata of the block to be created" + "\n" +
+        "valid addr: (or valid address) Requests an address to verify its authenticity with the current blockchain" + "\n" +
+        "verify message: (or verifymessage) Allows you to verify a message to see if its true or false (form of authentication)" + "\n" +
+        "lock: (or walletlock) will lock your wallet if it was unlocked (Needs to have a password to be locked)" + "\n" +
+        "unlock: (or walletpassphrase) requests a password and a time in days to have the wallet unlocked (100% unlock, not secure)" + "\n" +
+        "change password: (or walletpassphrasechange) Requests the old password before asking for the new password)")
+
     if userinput == "add node" or userinput == "addnode" or userinput == "addnode add":
         ip, add = [str(x) for x in input("Enter the IP or URL of the desired node (127.0.0.1 add): ").split()]
         if ip != "":
@@ -149,12 +149,12 @@ def simpleCli():
     elif userinput == "getaddednodeinfo" or userinput == "get added node info" or userinput == "get node info" or userinput == "new node info" or userinput == "added node info":
         print(conn.getaddednodeinfo(True))
         simpleCli()
-    
+
     elif userinput == "getaddressesbyaccount" or userinput == "get addresses by account" or userinput == "get addr by acc" or userinput == "get addr by account":
         addresses = input("Enter the desired account: ")
         print(conn.getaddressesbyaccount(addresses))
         simpleCli()
-        
+
     elif userinput == "bal" or userinput == "balance":
         print(conn.getbalance())
         simpleCli()
@@ -191,11 +191,11 @@ def simpleCli():
     elif userinput == "getblocktemplate" or userinput == "get block template" or userinput == "block template":
         print("Not available in this version")
         simpleCli()
-  
+
     elif userinput == "connections" or userinput == "getconnections" or userinput == "count connections" or userinput == "count connect" or userinput == "count connected":
         print(conn.getconnectioncount())
         simpleCli()
-  
+
     elif userinput == "difficulty":
         pprint(conn.getdifficulty())
         simpleCli()
@@ -213,7 +213,7 @@ def simpleCli():
     elif userinput == "info" or userinput == "getinfo":
         pprint(conn.getinfo())
         simpleCli()
-  
+
     elif userinput == "mininginfo" or userinput == "mining info" or userinput == "getmininginfo":
         pprint(conn.getmininginfo())
         simpleCli()
@@ -222,11 +222,11 @@ def simpleCli():
         account = input("Enter account name of the address, enter nothing for no name: ")
         print("Your new address is:" + conn.getnewaddress(account))
         simpleCli()
-  
+
     elif userinput == "peers" or userinput == "get peer info" or userinput == "getpeerinfo" or userinput == "show peers" or userinput == "display peers":
         pprint(conn.getpeerinfo())
         simpleCli()
-  
+
     elif userinput == "getrawchangeaddress" or userinput == "get raw change address" or userinput == "raw change addr":
         print("Not available")
         simpleCli()
@@ -254,7 +254,7 @@ def simpleCli():
         txid = input("Enter the tx id of the transaction you want to view: ")
         pprint(conn.gettransaction(txid))
         simpleCli()
-  
+
     elif userinput == "unspent coins" or userinput == "unspent tx" or userinput == "gettxoutsetinfo" or userinput == "get output tx info":
         pprint.pprint(conn.gettxoutsetinfo())
         simpleCli()
@@ -273,15 +273,15 @@ def simpleCli():
     elif userinput == "refill pool" or userinput == "keypoolrefill" or userinput == "key pool refill" or userinput == "key refill":
         conn.keypoolrefill()
         simpleCli()
-  
+
     elif userinput == "accounts name" or userinput == "show accounts" or userinput == "list accounts" or userinput == "listaccounts":
         pprint(conn.listaccounts())
         simpleCli()
-        
+
     elif userinput == "address group" or userinput == "coincontrol" or userinput == "cc" or userinput == "listaddressgroupings" or userinput == "list address groupings":
         pprint(conn.listaddressgroupings())
         simpleCli()
-        
+
     elif userinput == "received addresses" or userinput == "received addr" or userinput == "recept addr" or userinput == "recept addresses" or userinput == "listreceivedbyaddress":
         pprint(conn.listreceivedbyaddress())
         simpleCli()
@@ -312,7 +312,7 @@ def simpleCli():
 
     elif userinput == "signmessage" or userinput == "sign message" or userinput == "auth message":
         addr = input("Enter addr to the person that will receive the message: ")
-        msg = input("Enter message here: \n\t")
+        msg = input("Enter message here: ")
         print(conn.signmessage(addr, msg))
         simpleCli()
 
@@ -328,7 +328,7 @@ def simpleCli():
         addr = input("Enter address to verify: ")
         pprint(conn.validateaddress(addr))
         simpleCli()
-            
+
     elif userinput == "verifymessage" or userinput == "verify message":
         address, msg = [str(x) for x in input("Enter the address and the message: ").split()]
         conn.verifymessage(address, msg)
@@ -347,7 +347,7 @@ def simpleCli():
         simpleCli()
 
     elif userinput == "":
-        print("You did not enter anything\n")
+        print("You did not enter anything")
         simpleCli()
 
     elif userinput == "change password" or userinput == "change passphrase" or userinput == "walletpassphrasechange":
@@ -357,7 +357,7 @@ def simpleCli():
                 print("Enter old password: ")
             elif newpassphrase == "":
                 print("Enter new password: ")
-            else: 
+            else:
                 conn.walletpassphrasechange(oldpassphrase, newpassphrase)
                 print("Password updated!")
                 simpleCli()
