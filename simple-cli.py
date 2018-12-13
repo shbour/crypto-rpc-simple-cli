@@ -1,7 +1,7 @@
 from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
 from pprint import pprint
 
-conn = AuthServiceProxy("http://user:password@127.0.0.1:13337")
+conn = AuthServiceProxy("http://USER:PASS@127.0.0.1:PORT")
 
 def simpleCli():
     account = ""
