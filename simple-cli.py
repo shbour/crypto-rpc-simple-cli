@@ -1,7 +1,7 @@
 from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
 from pprint import pprint
 
-conn = AuthServiceProxy("http://USER:PASS@127.0.0.1:PORT")
+conn = AuthServiceProxy("http://user:password@127.0.0.1:13337")
 
 def simpleCli():
     account = ""
@@ -131,7 +131,6 @@ def simpleCli():
         try:
             password = input("Enter your encryption password here: ")
             conn.encryptwallet(password)
-            simpleCli()
         except ValueError:
             print("You had an error writing the password")
             simpleCli()
