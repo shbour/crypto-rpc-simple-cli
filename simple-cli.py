@@ -1,7 +1,7 @@
 from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
 from pprint import pprint
 
-conn = AuthServiceProxy("http://USER:PASS@IP_ADDR:PORT")
+conn = AuthServiceProxy("http://USER:PASS@127.0.0.1:PORT")
 
 def simpleCli():
     account = ""
@@ -256,7 +256,7 @@ def simpleCli():
         simpleCli()
 
     elif userinput == "unspent coins" or userinput == "unspent tx" or userinput == "gettxoutsetinfo" or userinput == "get output tx info":
-        pprint.pprint(conn.gettxoutsetinfo())
+        pprint(conn.gettxoutsetinfo())
         simpleCli()
 
     elif userinput == "importprivkey" or userinput == "import priv key" or userinput == "add priv key" or userinput == "add private key":
@@ -341,9 +341,10 @@ def simpleCli():
 
     elif userinput == "walletpassphrase" or userinput == "unlock wallet" or userinput == "unlock":
         password = input("Enter wallet encryption password: ")
-        timeout = int(input("Enter how long in second you want to keep the wallet unlocked?: "))
-        conn.walletpassphrase(password, timeout)
-        print("You have unlocked the wallet for " + (timeout * 60 * 60 * 24) + " days!")
+        timeout = int(input("Enter how long in day(s) you want to keep the wallet unlocked?: "))
+        unlockTime = (timeout * 60 * 60 * 24)
+        conn.walletpassphrase(password, unlockTime)
+        print("You have unlocked the wallet for %d day(s)!" % (timeout))
         simpleCli()
 
     elif userinput == "":
